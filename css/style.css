@@ -1,0 +1,120 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+:root{
+  --green: rgba(61, 199, 88, 0.826);
+  --blue: rgb(2, 47, 114);
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:15px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.415);
+}
+
+header img{
+  height:56px;
+}
+
+footer{
+  position: fixed;
+  bottom:0;
+  right:0;
+  text-align: right;
+}
+footer img{
+  height:30px;
+  width:30px;
+  margin-right:8px;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input{
+  margin:20px auto;
+  border-radius:5px;
+  padding:5px;
+  border:1px solid lightgray;
+}
+
+input:focus{
+  outline: 2px solid var(--green);
+}
+
+ol{
+  width:60%;
+  counter-reset: my-counter;
+}
+
+li::marker{
+  content:'';
+}
+
+li{
+  position: relative;
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  margin:25px;
+  padding:18px 18px 18px 30px;
+  width:100%;
+}
+
+li::before{
+  font-family: 'Montserrat', sans-serif;
+  width:2.5rem;
+  height:2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding:5px;
+  background: linear-gradient(135deg, var(--blue) 0%,var(--green) 100%);
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+  border-radius: 1rem 1rem 0 1rem;
+  position: absolute;
+  font-size:22px;
+  left: -2rem;
+  top: -1rem;
+  display: flex;
+  counter-increment: my-counter;
+  content: counter(my-counter)".";
+  color:white;
+}
+
+i.fa-circle-xmark{
+  color: var(--blue);
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  font-size:1.3rem;
+  position: absolute;
+  right:10px;
+}
+
+i.fa-circle-xmark:hover{
+  color: var(--green);
+  transform: scale(110%);
+  box-shadow: 0px 15px 20px rgba(32, 174, 117, 0.535);
+}
+
+.done-task{
+  text-decoration: line-through;
+}
+
+#error-msg{
+  color:red;
+  font-weight:500;
+}
+
+.all-completed img{
+  height: 300px;
+}
