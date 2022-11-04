@@ -18,7 +18,7 @@
 
     <div>
       <input type="text" placeholder="Scrivi un'attività" v-model="newTask">
-      <button @click="addNewTask()">Aggiungi</button>
+      <button @click="addNewTask()" id="add-task">Aggiungi</button>
     </div>
     <h4 id="error-msg">{{myErrorMsg}}</h4>
 
@@ -30,7 +30,7 @@
     </ol>
 
     <div v-else class="all-completed">
-      <h3>Hai completato tutti i task! Puoi goderti un po' di relax</h3>
+      <h3>Hai completato tutti i task!<br>Puoi goderti un po' di relax</h3>
       <img src="img/woman-relaxing.webp" alt="">
     </div>
      

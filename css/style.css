@@ -7,6 +7,7 @@
 
 :root{
   --green: rgba(61, 199, 88, 0.826);
+  --darkgreen: rgba(42, 142, 64, 0.826);
   --blue: rgb(4, 25, 56);
 }
 
@@ -42,13 +43,40 @@ footer img{
 
 input{
   margin:20px auto;
-  border-radius:5px;
-  padding:5px;
+  border-radius:0.5rem;
+  padding:8px;
+  width:190px;
   border:1px solid lightgray;
 }
 
 input:focus{
   outline: 2px solid var(--green);
+  box-shadow: 0 0 7px var(--darkgreen) ;
+}
+
+
+#add-task{
+  background: linear-gradient(135deg, var(--darkgreen) 0%,var(--green) 100%);
+  border-radius: 0.5rem;
+  box-shadow: var(--blue) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 500;
+  outline: 0;
+  padding: 0 15px;
+  margin-left:15px;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+#add-task:hover {
+  box-shadow: var(--blue) 0 3px 8px;
+  color: var(--blue);
+}
+#add-task:active {
+  box-shadow: none;
 }
 
 ol{
@@ -106,8 +134,12 @@ i.fa-circle-xmark{
 
 i.fa-circle-xmark:hover{
   color: var(--green);
-  transform: scale(110%);
+  transform: scale(120%);
   box-shadow: 0px 15px 20px rgba(32, 174, 117, 0.535);
+}
+
+i.fa-circle-xmark:active{
+  box-shadow: none;
 }
 
 .done-task{
@@ -117,6 +149,20 @@ i.fa-circle-xmark:hover{
 #error-msg{
   color:red;
   font-weight:500;
+}
+
+.all-completed{
+  padding:25px;
+  border-radius: 15px;
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+  text-align: center;
+}
+
+.all-completed h3{
+  background: linear-gradient(135deg, var(--blue) 10%,var(--darkgreen) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .all-completed img{
