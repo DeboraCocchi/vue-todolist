@@ -18,14 +18,14 @@
 
     <div>
       <input type="text" placeholder="Scrivi un'attività" v-model="newTask">
-      <button>Aggiungi</button>
+      <button @click="addNewTask()">Aggiungi</button>
     </div>
     <h4 id="error-msg">{{myErrorMsg}}</h4>
 
     <ol v-if="tasks.length > 0">
-      <li v-for="(task, index) in tasks">
+      <li v-for="(task, index) in tasks" @click="doneTask(index)" :class="{'done-task' : task.done}">
         <span>{{task.activity}}</span>
-        <i class="fa-regular fa-circle-xmark"></i>
+        <i class="fa-regular fa-circle-xmark" @click.stop="removeTask(index)"></i>
       </li>
     </ol>
 
@@ -34,12 +34,7 @@
       <img src="img/woman-relaxing.webp" alt="">
     </div>
      
-    
-
-
-
-
-
+  
   </div>
 
   <footer><img src="img/cdbee.png" alt="dbee"></footer>

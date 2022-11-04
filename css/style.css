@@ -7,7 +7,7 @@
 
 :root{
   --green: rgba(61, 199, 88, 0.826);
-  --blue: rgb(2, 47, 114);
+  --blue: rgb(4, 25, 56);
 }
 
 header{
@@ -88,6 +88,10 @@ li::before{
   counter-increment: my-counter;
   content: counter(my-counter)".";
   color:white;
+}
+
+li>span:hover , li>i:hover{
+  cursor:pointer;
 }
 
 i.fa-circle-xmark{

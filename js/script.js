@@ -23,7 +23,7 @@ createApp({
         },
         {
           activity:'Fare la lavatrice',
-          done: false
+          done: true
         },
         {
           activity:'Stirare il bucato',
@@ -32,23 +32,38 @@ createApp({
       ],
       newTask : '',
       done: false,
-      myClassDone: 'task-done',
+      myClassDone: 'done-task',
       myErrorMsg:''
     }
   },
   methods:{
     addNewTask(){
       this.myErrorMsg =''
+      if(this.newTask.trim().length <5) {
+        this.myErrorMsg = 'Attenzione! L\'attività deve contenere almeno 5 caratteri.'
+        this.newTask ='';
+        return;}
+
+      this.myErrorMsg =''
       const newTaskObj = {
-        text: this.newTask,
-        done: false
-      }
+          activity: this.newTask,
+          done: false
+           }
       this.tasks.unshift(newTaskObj);
       this.newTask='';
     },
     doneTask(index){
-      console.log(this.tasks[index].done);
-      (this.tasks[index].done) ? !this.tasks[index].done : this.tasks[index].done
+      this.tasks[index].done =!this.tasks[index].done;
+    },
+    removeTask(index){
+      if(!this.tasks[index].done){
+        this.myErrorMsg = 'Attenzione! Devi completare un\'attività prima di cancellarla.'
+        return;}
+      if(this.tasks.find( element => element = this.tasks[index].activity)){
+        this.myErrorMsg ='';
+        this.tasks.splice(index, 1);
+      }
     }
+
   }
 }).mount('#app')
