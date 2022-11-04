@@ -26,7 +26,7 @@ createApp({
           done: true
         },
         {
-          activity:'Stirare il bucato',
+          activity:'Stendere il bucato',
           done: false
         }
       ],
@@ -37,13 +37,19 @@ createApp({
     }
   },
   methods:{
-    addNewTask(){
-      this.myErrorMsg =''
+   addNewTask(){
+     //controllo lunghezza stringa
+      this.myErrorMsg ='';
       if(this.newTask.trim().length <5) {
         this.myErrorMsg = 'Attenzione! L\'attività deve contenere almeno 5 caratteri.'
         this.newTask ='';
         return;}
 
+      //controllo presenza attività
+      if(this.tasks.find( el => el.activity.toLowerCase() === this.newTask.toLowerCase())){
+          this.myErrorMsg = 'Attenzione! L\'attività che vuoi aggiungere è già presente.';
+          this.newTask='';
+          return;};
       this.myErrorMsg =''
       const newTaskObj = {
           activity: this.newTask,
@@ -63,7 +69,8 @@ createApp({
         this.myErrorMsg ='';
         this.tasks.splice(index, 1);
       }
-    }
+    },
+   
 
   }
 }).mount('#app')

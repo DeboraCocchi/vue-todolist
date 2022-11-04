@@ -6,8 +6,8 @@
 }
 
 :root{
-  --green: rgba(61, 199, 88, 0.826);
-  --darkgreen: rgba(42, 142, 64, 0.826);
+  --green: rgb(61, 199, 88);
+  --darkgreen: rgb(42, 142, 64);
   --blue: rgb(4, 25, 56);
 }
 
@@ -20,7 +20,7 @@ header{
 }
 
 header img{
-  height:56px;
+  height:50px;
 }
 
 footer{
@@ -80,8 +80,8 @@ input:focus{
 }
 
 ol{
-  width:60%;
-  counter-reset: my-counter;
+  width:50%;
+  counter-reset: my-counter; 
 }
 
 li::marker{
@@ -90,11 +90,12 @@ li::marker{
 
 li{
   position: relative;
-  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(0, 75, 27, 0.05);
   border-radius: 0 0.5rem 0.5rem 0.5rem;
   margin:25px;
   padding:18px 18px 18px 30px;
   width:100%;
+  background-color: #FFFFFF;
 }
 
 li::before{
@@ -129,7 +130,7 @@ i.fa-circle-xmark{
   border-radius: 50%;
   font-size:1.3rem;
   position: absolute;
-  right:10px;
+  right:15px;
 }
 
 i.fa-circle-xmark:hover{
@@ -156,6 +157,7 @@ i.fa-circle-xmark:active{
   border-radius: 15px;
   box-shadow: 0.25rem 0.25rem 0.6rem rgba(0,0,0,0.05), 0 0.5rem 1.125rem rgba(75,0,0,0.05);
   text-align: center;
+  margin-top:20px;
 }
 
 .all-completed h3{

@@ -14,10 +14,11 @@
 </head>
 <body>
   <header><img src="img/logo.png" alt=""></header>
+  
   <div class="container" id="app">
 
     <div>
-      <input type="text" placeholder="Scrivi un'attività" v-model="newTask">
+      <input @keyup.enter="addNewTask()" type="text" placeholder="Scrivi un'attività" v-model="newTask">
       <button @click="addNewTask()" id="add-task">Aggiungi</button>
     </div>
     <h4 id="error-msg">{{myErrorMsg}}</h4>
@@ -30,14 +31,14 @@
     </ol>
 
     <div v-else class="all-completed">
-      <h3>Hai completato tutti i task!<br>Puoi goderti un po' di relax</h3>
+      <h3>Hai completato tutti i task!<br>Puoi goderti un po' di relax.</h3>
       <img src="img/woman-relaxing.webp" alt="">
     </div>
      
   
   </div>
 
-  <footer><img src="img/cdbee.png" alt="dbee"></footer>
+  <footer><img src="img/cdbee.png" alt="dbee" title="bzzzz"></footer>
   
 
   <script src="js/script.js"></script>
