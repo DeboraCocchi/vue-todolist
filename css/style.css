@@ -9,6 +9,10 @@ body{
  overflow-y:auto;
 }
 
+.d-none{
+  display:none;
+}
+
 .colors.blur{
   position:absolute;
   height:calc(100vh - 80px);
@@ -34,8 +38,6 @@ body{
   top:250px;
   left:400px;
   background-color: var(--blue);
-
-
 }
 .color:nth-child(3){
   width: 400px;

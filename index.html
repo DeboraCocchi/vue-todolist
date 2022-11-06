@@ -26,7 +26,7 @@
       <input @keyup.enter="addNewTask()" type="text" placeholder="Scrivi un'attività" v-model="newTask">
       <button @click="addNewTask()" id="add-task">Aggiungi</button>
     </div>
-    <h4 id="error-msg">{{myErrorMsg}}</h4>
+    <h4 id="error-msg" :class="{'d-none':myErrorMsg===''}">{{myErrorMsg}}</h4>
 
     <ol v-if="tasks.length > 0">
       <li v-for="(task, index) in tasks" @click="doneTask(index)" :class="{'done-task' : task.done}">
